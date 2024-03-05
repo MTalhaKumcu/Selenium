@@ -20,7 +20,6 @@ public class C2_SwitchingWindows extends TestBase {
         String actualText = h3Element.getText();
         Assert.assertEquals(expectedtext, actualText);
 
-
         String expectedTitle = "The Internet";
         String actualPageTitle = driver.getTitle();
         Assert.assertEquals(expectedTitle, actualPageTitle);
