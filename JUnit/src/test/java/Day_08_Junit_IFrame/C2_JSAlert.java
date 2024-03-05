@@ -4,6 +4,8 @@ import Utilities.TestBase;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 
 public class C2_JSAlert extends TestBase {
 
@@ -29,7 +31,17 @@ public class C2_JSAlert extends TestBase {
         String actualAlert = driver.findElement(By.xpath("//*[@id='result']")).getText();
         Assert.assertEquals(expectedAlertCancel, actualAlert);
 
+    }
+    @Test
+    public void test03(){
+        driver.get("https://the-internet.herokuapp.com/javascript_alerts");
+        driver.findElement(By.xpath("//*[text()='Click for JS Prompt']")).click();
+        driver.switchTo().alert().sendKeys("Talha");
+        driver.switchTo().alert().accept();
+        String expectedText = "You entered: Talha";
+        String actualText = driver.findElement(By.xpath("//*[@id='result']")).getText();
 
+        Assert.assertEquals(expectedText,actualText);
     }
 
 }
