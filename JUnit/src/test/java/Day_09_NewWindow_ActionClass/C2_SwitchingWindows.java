@@ -1,6 +1,7 @@
 package Day_09_NewWindow_ActionClass;
 
 import Utilities.TestBase;
+import org.checkerframework.checker.units.qual.A;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -37,6 +38,10 @@ public class C2_SwitchingWindows extends TestBase {
         }
         driver.switchTo().window(secondWHV);
         System.out.println(driver.getTitle());
+
+        expectedTitle = "New Window";
+        actualPageTitle =driver.getTitle();
+        Assert.assertEquals(expectedTitle,actualPageTitle);
     }
 
 }
