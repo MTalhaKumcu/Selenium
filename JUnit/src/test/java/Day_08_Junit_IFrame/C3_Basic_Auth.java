@@ -13,7 +13,6 @@ public class C3_Basic_Auth extends TestBase {
         driver.get("https://admin:admin@the-internet.herokuapp.com/basic_auth");
         WebElement successText = driver.findElement(By.tagName("p"));
         Assert.assertTrue(successText.isDisplayed());
-
     }
 
 }
