@@ -42,6 +42,15 @@ public class C2_SwitchingWindows extends TestBase {
         expectedTitle = "New Window";
         actualPageTitle =driver.getTitle();
         Assert.assertEquals(expectedTitle,actualPageTitle);
+
+        WebElement secondH3 = driver.findElement(By.tagName("h3"));
+        String sExpectedtext ="New Window";
+        String sActualText = secondH3.getText();
+        Assert.assertEquals(sExpectedtext,sActualText);
+
+        driver.switchTo().window(firstPageWHV);
+        Assert.assertEquals(expectedtext,actualText);
+
     }
 
 }
