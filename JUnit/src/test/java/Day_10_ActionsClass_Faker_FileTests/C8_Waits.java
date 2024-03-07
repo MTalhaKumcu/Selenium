@@ -22,7 +22,7 @@ public class C8_Waits {
 
         driver.get("https://the-internet.herokuapp.com/dynamic_controls");
         driver.findElement(By.xpath("//button[text()='Remove']")).click();
-        WebElement itsgone = driver.findElement(By.xpath("//p[text()=\"It`s gone!\"]"));
+        WebElement itsgone = driver.findElement(By.xpath("//p[@id='message']"));
         Assert.assertTrue(itsgone.isDisplayed());
 
        /* driver.get("Https://amazon.com");
