@@ -23,10 +23,34 @@ public class ReusableMethod {
                 + ltd.getHour()
                 + ltd.getMinute()
                 + ltd.getSecond()
-                +".png";
-        String ssFilePath = "target/ScreenShot/"+dateEthicet;
+                + ".png";
+        String ssFilePath = "target/ScreenShot/" + dateEthicet;
         File wholePageSS = new File(ssFilePath);
         File temporarySS = tss.getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(temporarySS,wholePageSS);
+        FileUtils.copyFile(temporarySS, wholePageSS);
+    }
+
+    public static void webelementSS(WebDriver driver, WebElement webElement) {
+
+        LocalDateTime ltd = LocalDateTime.now();
+        String dateEthicet = "SpecificPage"
+                + ltd.getYear()
+                + ltd.getMonth()
+                + ltd.getDayOfMonth()
+                + ltd.getHour()
+                + ltd.getMinute()
+                + ltd.getSecond()
+                + ".png";
+
+        String ssfilePath ="target/ScreenShot/"+dateEthicet;
+
+        File wholePageSS = new File(ssfilePath);
+        File temporarySS = webElement.getScreenshotAs(OutputType.FILE);
+        try {
+            FileUtils.copyFile(temporarySS,wholePageSS);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 }
