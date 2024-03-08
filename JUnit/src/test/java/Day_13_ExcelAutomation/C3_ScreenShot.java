@@ -1,5 +1,6 @@
 package Day_13_ExcelAutomation;
 
+import Utilities.ReusableMethod;
 import Utilities.TestBase;
 import org.apache.commons.io.FileUtils;
 import org.junit.Assert;
@@ -29,5 +30,7 @@ public class C3_ScreenShot extends TestBase {
         File wholePageSS = new File("target/ScreenShot/wholePageSS.png");
         File temporarySS = tss.getScreenshotAs(OutputType.FILE);
         FileUtils.copyFile(temporarySS,wholePageSS);
+
+        ReusableMethod.wholePageSS(driver);
     }
 }
