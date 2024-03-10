@@ -1,6 +1,7 @@
 package tests.Day_15_POM;
 
 import org.openqa.selenium.Keys;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.InstagramWeb;
 import utilities.Driver;
@@ -18,10 +19,11 @@ public class C2_instagram_login {
                 .sendKeys("enter your username" + Keys.TAB);
         instagramWeb.password
                 .sendKeys("enter your password" + Keys.TAB);
-        instagramWeb.loginButton
-                .click();
-        ReuseableMethod.wait(20);
+        instagramWeb.loginButton.click();
+        ReuseableMethod.wait(50);
 
+
+      //  Assert.assertTrue(instagramWeb.profileSign.isDisplayed());
         Driver.closeDriver();
     }
 }

@@ -22,5 +22,6 @@ public class InstagramWeb {
     @FindBy(xpath = "//*[@type='submit']")
     public WebElement loginButton;
 
-
+    @FindBy(xpath = "//*[text()='Ana Sayfa']")
+    public WebElement profileSign;
 }
