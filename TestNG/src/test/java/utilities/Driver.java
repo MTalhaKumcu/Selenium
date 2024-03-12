@@ -10,8 +10,21 @@ import org.openqa.selenium.safari.SafariDriver;
 import java.time.Duration;
 
 public class Driver {
-    static WebDriver driver;
+    private static WebDriver driver;
 
+    private Driver() {
+
+    }
+    /*
+    *
+    * used singleton pattern
+    *
+    * singleton pattern kullanilarak istenmeyen yontemlerle
+    * driver objesine erisimi engelledik
+    *
+    * contsructor`i priv yaparak bu classtan obje olusturularak class uyelerinin kullanilmasinin onune gectik
+    *
+    * */
 
     public static WebDriver getDriver() {
 
@@ -55,6 +68,7 @@ public class Driver {
         }
 
     }
+
     public static void quitDriver() {
         if (driver != null) {
             driver.close();
