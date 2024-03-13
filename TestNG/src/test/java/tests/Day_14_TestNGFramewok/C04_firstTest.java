@@ -11,7 +11,7 @@ import utilities.ReuseableMethod;
 public class C04_firstTest {
 
 
-    @Test
+    @Test(groups = "smoke")
     public void test01() {
         //go to amazon
         Driver.getDriver().get("https://www.amazon.com");

@@ -12,7 +12,7 @@ public class C01_Priority {
     public void wiseTest(){
         System.out.println("wise");
     }
-    @Test(priority = 5)
+    @Test(groups = "smoke")
     public void amazonTest(){
         System.out.println("amazon");
     }
