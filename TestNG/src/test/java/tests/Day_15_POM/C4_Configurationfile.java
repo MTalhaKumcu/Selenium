@@ -1,6 +1,5 @@
 package tests.Day_15_POM;
 
-import org.openqa.selenium.Keys;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.AmazonPage;
@@ -14,7 +13,7 @@ public class C4_Configurationfile {
     public void test01() {
         Driver.getDriver().get(ConfigurationReader.getProperty("amazonUrl"));
         AmazonPage amazonPage = new AmazonPage();
-        amazonPage.searchBox.sendKeys(ConfigurationReader.getProperty("amazonSearchText"));
+        amazonPage.searchBox.sendKeys(ConfigurationReader.getProperty("actualText"));
         amazonPage.searchBox.submit();
 
         String expectedContent = ConfigurationReader.getProperty("expetedText");
