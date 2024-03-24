@@ -20,6 +20,6 @@ public class C3_DataProvider {
 
 
         Assert.assertTrue(actualText.contains(expectedText));
-        Driver.quitDriver();
+        Driver.closeDriver();
     }
 }
