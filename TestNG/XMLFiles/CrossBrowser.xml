@@ -3,16 +3,14 @@
     <test name="chrome test">
         <parameter name="browser" value="chrome"></parameter>
         <classes>
-          <class name="tests.Day_16_POM_Assertions.C3_SoftAssertion"></class>
-
+            <class name="tests.Day_19_CrossBrowserTestswithCucumber.C1_amazonSearch"></class>
         </classes>
     </test>
     <test name="edge test">
         <parameter name="browser" value="edge"></parameter>
         <classes>
-            <class name="tests.Day_16_POM_Assertions.C1_DriverClassLastVersion"></class>
-            <class name="tests.Day_16_POM_Assertions.C2_SingletonPattern"></class>
-
+            <class name="tests.Day_19_CrossBrowserTestswithCucumber.C2_amazonSearch2"></class>
+            <class name="tests.Day_19_CrossBrowserTestswithCucumber.C3_amazonSearch3"></class>
         </classes>
     </test>
 </suite>

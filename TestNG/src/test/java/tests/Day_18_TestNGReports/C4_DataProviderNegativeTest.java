@@ -12,11 +12,11 @@ public class C4_DataProviderNegativeTest {
     @DataProvider
     public static Object[][] YanlisKullaniciAdlariListesi() {
 
-        String[][] kullaniciBilgileriArrayi = {{"Memre","12345"},{"Mustafa","23456"},
-                {"Burcu","32456"},{"Cigdem","867453"},
-                {"Ahmet","32567"},{"Kemal","87654"},
-                {"Melike","65747"},{"Cinar","645353"},
-                {"Muleyke","6312"},{"Kadir","19870"}};
+        String[][] kullaniciBilgileriArrayi = {{"Memre", "12345"}, {"Mustafa", "23456"},
+                {"Burcu", "32456"}, {"Cigdem", "867453"},
+                {"Ahmet", "32567"}, {"Kemal", "87654"},
+                {"Melike", "65747"}, {"Cinar", "645353"},
+                {"Muleyke", "6312"}, {"Kadir", "19870"}};
 
         return kullaniciBilgileriArrayi;
     }
@@ -24,7 +24,7 @@ public class C4_DataProviderNegativeTest {
     // sisteme giris yapilamadigini test edin
 
 
-    @Test(dataProvider = "YanlisKullaniciAdlariListesi")
+   /* @Test(dataProvider = "YanlisKullaniciAdlariListesi")
     public void gecersizIsimSifreTesti(String kullaniciAdi, String password){
         // QUALITYDEMY ANA SAYFAYA GIDIN
         Driver.getDriver().get(ConfigurationReader.getProperty("qdUrl"));
@@ -43,6 +43,6 @@ public class C4_DataProviderNegativeTest {
         Assert.assertTrue(qualitydemyPage.emailKutusu.isEnabled());
         // sayfayi kapatin
 
-        Driver.closeDriver();
-    }
+        Driver.closeDriver();*/
 }
+

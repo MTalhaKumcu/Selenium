@@ -23,7 +23,7 @@ public class DriverCross {
         browser = browser == null ? ConfigurationReader.getProperty("browser") : browser;
         //bu satir emniyet subabidir eger para metre olarak null gonderilirse
         //congfiguration.properties browser degerini alacak
-\if (driver == null) {
+if (driver == null) {
             switch (browser) {
                 case "firefox":
                     WebDriverManager.firefoxdriver().setup();
