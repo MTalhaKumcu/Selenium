@@ -61,4 +61,12 @@ public class AmazonStepDefinitions {
     }
 
 
+    @Then("Control title contain amazon")
+    public void controlTitleContainAmazon() {
+
+        String actualTitle=Driver.getDriver().getTitle();
+        String expectedTitle = "amazon";
+        Assert.assertTrue(actualTitle.contains(expectedTitle));
+
+    }
 }
