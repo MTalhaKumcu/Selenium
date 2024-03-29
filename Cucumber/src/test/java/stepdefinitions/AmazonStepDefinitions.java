@@ -1,5 +1,6 @@
 package stepdefinitions;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -64,9 +65,34 @@ public class AmazonStepDefinitions {
     @Then("Control title contain amazon")
     public void controlTitleContainAmazon() {
 
-        String actualTitle=Driver.getDriver().getTitle();
+        String actualTitle = Driver.getDriver().getTitle();
         String expectedTitle = "amazon";
         Assert.assertTrue(actualTitle.contains(expectedTitle));
+
+    }
+
+    @Given("User goes to {string} webpage")
+    public void userGoesToWebpage(String url) {
+        Driver.getDriver().get(ConfigReader.getProperty(url));
+
+    }
+
+    @When("Make searched {string}")
+    public void makeSearched(String word) {
+        amazonpage.searchBox.sendKeys(word + Keys.ENTER);
+
+    }
+
+    @Then("Make test result of {string}")
+    public void makeTestResultOf(String expectedWord) {
+        // RoF = result of word
+        String actualRoF = amazonpage.result.getText();
+        Assert.assertTrue(actualRoF.contains(expectedWord));
+    }
+
+    @And("{int} sec wait")
+    public void secWait(int sec) throws InterruptedException {
+        Thread.sleep(sec*1000);
 
     }
 }
