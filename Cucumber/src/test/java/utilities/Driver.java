@@ -31,7 +31,6 @@ public class Driver {
                     driver = new SafariDriver();
                     break;
 
-
                 case "edge":
                     WebDriverManager.edgedriver().setup();
                     driver = new EdgeDriver();
