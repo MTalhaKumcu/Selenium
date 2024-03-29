@@ -3,6 +3,7 @@ package stepdefinitions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.checkerframework.checker.units.qual.K;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import pages.Amazonpage;
@@ -33,5 +34,31 @@ public class AmazonStepDefinitions {
     public void close_page() {
         Driver.closeDrive();
     }
+
+    @Then("Make test result of java")
+    public void make_test_result_of_java() {
+        String actualTextResult = amazonpage.result.getText();
+        String expectedText = "java";
+        Assert.assertTrue((actualTextResult.contains(expectedText)));
+    }
+
+    @When("Make searched java")
+    public void make_searched_java() {
+        amazonpage.searchBox.sendKeys("java" + Keys.ENTER);
+    }
+
+
+    @When("Make searched samsung")
+    public void Make_searched_samsung() {
+        amazonpage.searchBox.sendKeys("samsung" + Keys.ENTER);
+    }
+
+    @Then("Make test result of samsung")
+    public void Make_test_result_of_samsung() {
+        String actualTextResult = amazonpage.result.getText();
+        String expectedText = "samsung";
+        Assert.assertTrue((actualTextResult.contains(expectedText)));
+    }
+
 
 }
