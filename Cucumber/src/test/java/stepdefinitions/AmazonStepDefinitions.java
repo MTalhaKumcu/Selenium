@@ -10,6 +10,7 @@ import pages.Amazonpage;
 import utilities.ConfigReader;
 import utilities.Driver;
 
+
 public class AmazonStepDefinitions {
     Amazonpage amazonpage = new Amazonpage();
 
@@ -71,20 +72,17 @@ public class AmazonStepDefinitions {
     }
 
     @Given("User goes to {string} webpage")
-    public void userGoesToWebpage(String url) {
+    public void user_goes_to_webpage(String url) {
         Driver.getDriver().get(ConfigReader.getProperty(url));
-
     }
 
-    @When("Make searched {string}")
-    public void makeSearched(String word) {
+    @Then("Make searched {string}")
+    public void make_searched(String word) {
         amazonpage.searchBox.sendKeys(word + Keys.ENTER);
-
     }
 
     @Then("Make test result of {string}")
-    public void makeTestResultOf(String expectedWord) {
-        // RoF = result of word
+    public void make_test_result_of(String expectedWord) {
         String actualRoF = amazonpage.result.getText();
         Assert.assertTrue(actualRoF.contains(expectedWord));
     }
@@ -94,7 +92,6 @@ public class AmazonStepDefinitions {
         Thread.sleep(sec * 1000L);
 
     }
-
 
     @Then("click first product")
     public void click_first_product() {
@@ -107,5 +104,6 @@ public class AmazonStepDefinitions {
 
         Assert.assertTrue(actualWord.contains(searchedWord));
     }
+
 
 }
