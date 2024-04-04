@@ -1,8 +1,8 @@
 Feature: US1008 Multi negative login test with users list
- @qd
+ @qd @ss
   Scenario Outline: TC14 user does not enter user cridential to login
 
-    Given User goes to "qdUrl" webpage
+    Given User goes to "https://www.qualitydemy.com" webpage
     Then click first login link
     And  user enter email"<email>"
     And  user enter password"<password>"
