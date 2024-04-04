@@ -104,11 +104,6 @@ public class AmazonStepDefinitions {
 
         Assert.assertTrue(actualWord.contains(searchedWord));
     }
-    @Given("User goes to qd webpage")
-    public void user_goes_to_qd_webpage() {
-        Driver.getDriver().get(ConfigReader.getProperty("qdUrl"));
-    }
-
 
 
 }

@@ -1,12 +1,19 @@
 package stepdefinitions;
 
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import pages.QualitydemyPage;
+import utilities.ConfigReader;
+import utilities.Driver;
 
 public class QdemyStepDefinitions {
     QualitydemyPage qualitydemyPage = new QualitydemyPage();
+    @Given("User goes to qd webpage")
+    public void user_goes_to_qd_webpage() {
+        Driver.getDriver().get(ConfigReader.getProperty("qdUrl"));
+    }
 
     @Then("click first login link")
     public void click_first_login_link() {
