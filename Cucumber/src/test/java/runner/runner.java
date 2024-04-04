@@ -9,9 +9,9 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/features",
         glue = "stepdefinitions",
-        tags = "@od",//Work in Progress @wip
+        tags = "@qd",//Work in Progress @wip
         dryRun = true
 )
-public class Runner {
+public class runner {
 
 }
