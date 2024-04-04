@@ -8,7 +8,7 @@ Feature: US1004 using parametre in steps
     And 3 sec wait
     And Close page
 
-  @wip
+#@wip
   Scenario: TC09 Amazon Java Test
 
     Given User goes to "amazonUrl" webpage
@@ -16,7 +16,7 @@ Feature: US1004 using parametre in steps
     Then Make test result of "java"
     And Close page
 
-  @wip
+#@wip
   Scenario: TC010 Amazon Samsung Test
 
     Given User goes to "amazonUrl" webpage

@@ -4,7 +4,6 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.checkerframework.checker.units.qual.K;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import pages.Amazonpage;
@@ -92,7 +91,21 @@ public class AmazonStepDefinitions {
 
     @And("{int} sec wait")
     public void secWait(int sec) throws InterruptedException {
-        Thread.sleep(sec*1000);
+        Thread.sleep(sec * 1000L);
 
     }
+
+
+    @Then("click first product")
+    public void click_first_product() {
+        amazonpage.firstProduct.click();
+    }
+
+    @Then("opened producek is Contain {string}")
+    public void opened_producek_is_contain(String searchedWord) {
+        String actualWord = amazonpage.firstProductName.getText();
+
+        Assert.assertTrue(actualWord.contains(searchedWord));
+    }
+
 }
