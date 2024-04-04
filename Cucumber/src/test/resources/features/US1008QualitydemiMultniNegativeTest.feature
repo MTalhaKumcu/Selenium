@@ -14,4 +14,3 @@ Feature: US1008 Multi negative login test with users list
       | abc@gmail.com | 123456   |
       | asd@gmail.com | 1234567  |
       | klm@gmail.com | asd2das  |
-
