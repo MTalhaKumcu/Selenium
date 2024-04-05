@@ -1,5 +1,5 @@
 Feature: US1007 amazon multi searching
-
+@regression
   Scenario Outline: TC13 User can make multi searching in Amazon
     Given User goes to "amazonUrl" webpage
     Then Make searched "<searchedWord>"

@@ -1,6 +1,6 @@
 #@wip
 Feature: herokuapp
-
+  @regression
   Scenario: TC11 user Test buttons
     Given User goes to "herokuappUrl" webpage
     Then push add button

@@ -1,5 +1,5 @@
 Feature: US1008 Multi negative login test with users list
- @qd @ss
+ @smoke
   Scenario Outline: TC14 user does not enter user cridential to login
 
     Given User goes to "qdUrl" webpage
