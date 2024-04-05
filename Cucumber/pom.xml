@@ -78,6 +78,7 @@
                         </configuration>
                     </execution>
                 </executions>
+
             </plugin> <!-- Raporlama yapiyor -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -109,7 +110,7 @@
                     <argLine>-Dfile.encoding=UTF-8</argLine>
                     <useFile>false</useFile>
                     <includes>
-                        <include>**/runners/*Runner*.java</include>
+                        <include>**/runners/*ParallelRunner*.java</include>
                         <!-- runners package altinda
                              calismasini istedigimiz Runner'larin
                              isimlerindeki ortak bolumu yaziyoruz-->
