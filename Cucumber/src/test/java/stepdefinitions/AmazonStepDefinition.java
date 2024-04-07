@@ -11,7 +11,7 @@ import utilities.ConfigReader;
 import utilities.Driver;
 
 
-public class AmazonStepDefinitions {
+public class AmazonStepDefinition {
     Amazonpage amazonpage = new Amazonpage();
 
     @Given("User goes to amazon webpage")

@@ -8,7 +8,7 @@ import pages.QualitydemyPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 
-public class QdemyStepDefinitions {
+public class QdemyStepDefinition {
     QualitydemyPage qualitydemyPage = new QualitydemyPage();
     @Given("User goes to qd webpage")
     public void user_goes_to_qd_webpage() {
