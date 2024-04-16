@@ -6,7 +6,7 @@ public class JDBC {
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
 
         //1.STEP
-        Class.forName("com.mysql.cj.jdbc,Driver");
+        Class.forName("com.mysql.cj.jdbc.Driver");
         //2.STEP have to
         Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/java", "root", "Admin");
         //3.STEP have to
@@ -17,7 +17,8 @@ public class JDBC {
         ResultSet resultSet = statement.executeQuery(query);
         //5.STEP
         resultSet.next();//Iterator
-        resultSet.getString("username");//
+       String  result = resultSet.getString("username");
+        System.out.printf(result);
     }
 
 }
