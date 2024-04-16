@@ -18,18 +18,29 @@ public class JDBC {
         //5.STEP
         resultSet.next();//Iterator
 
-        System.out.printf(resultSet.getString("username") + "\n");
+        System.out.println(resultSet.getString("username"));
         //John
         resultSet.next();
-        System.out.printf(resultSet.getString("username") + "\n");
+        System.out.println(resultSet.getString("username"));
         //John
         //Jane
         resultSet.next();
-        System.out.printf(resultSet.getString("email") + "\n");
+        System.out.println(resultSet.getString("email"));
         //John
         //Jane
         //alice.smith@example.com
+        resultSet.absolute(6);
+        System.out.println(resultSet.getString("email"));
+        //John
+        //Jane
+        //alice.smith@example.com
+        //michael.wilson@example.com
 
+        resultSet.first();
+        System.out.println(resultSet.getString("userlastname"));
+
+        resultSet.first();
+        System.out.println(resultSet.getInt("user_id"));
     }
 
 }
