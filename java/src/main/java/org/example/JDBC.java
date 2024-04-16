@@ -17,8 +17,19 @@ public class JDBC {
         ResultSet resultSet = statement.executeQuery(query);
         //5.STEP
         resultSet.next();//Iterator
-        String result = resultSet.getString("username");
-        System.out.printf(result);
+
+        System.out.printf(resultSet.getString("username") + "\n");
+        //John
+        resultSet.next();
+        System.out.printf(resultSet.getString("username") + "\n");
+        //John
+        //Jane
+        resultSet.next();
+        System.out.printf(resultSet.getString("email") + "\n");
+        //John
+        //Jane
+        //alice.smith@example.com
+
     }
 
 }
