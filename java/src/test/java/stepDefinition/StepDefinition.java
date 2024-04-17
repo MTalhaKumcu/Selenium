@@ -13,10 +13,12 @@ public class StepDefinition {
 
     ResultSet resultSet;
 
-    @Given("db connection")
-    public void db_connection() {
+
+    @Given("database connection")
+    public void database_connection() {
         JDBCResuable.getConnection();
     }
+
 
     @Given("make query and execute")
     public void make_query_and_execute() throws SQLException {
