@@ -19,6 +19,8 @@ public class StepDefinition {
 
     String query;
 
+    int rowCount;
+
     @Given("database connection")
     public void database_connection() {
         JDBCResuableMethods.getConnection();
@@ -71,10 +73,26 @@ public class StepDefinition {
         }
 
         for (int i = 0; i < actualName.size(); i++) {
-            assertEquals(expectedeName.get(i),actualName.get(i));
-            System.out.println(i+ " :)))))");
+            assertEquals(expectedeName.get(i), actualName.get(i));
+            System.out.println(i + " :)))))");
         }
+
+
+        //---------------------- update queary 01 ------------------
+
 
     }
 
+    @Given("query03 update and execution")
+    public void query03_update_and_execution() throws SQLException {
+
+        query = queryManage.getQueryPhone();
+        rowCount = JDBCResuableMethods.updateQuery(query);
+    }
+
+    @Given("query03 resultset process")
+    public void query03_resultset_process() {
+
+        assertEquals(18,rowCount);
+    }
 }

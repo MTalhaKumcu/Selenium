@@ -15,10 +15,11 @@ import org.junit.runner.RunWith;
         },
         features = "src/test/resources",
         glue = "StepDefinition",
-        tags = "@query02",//"@query01",
+        tags = "update01",
+        //"@query02",//"@query01",
         dryRun = true
 
 )
 
-public class runner {
+public class Runner {
 }
