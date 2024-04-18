@@ -1,4 +1,4 @@
-package runner;
+package Runner;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
@@ -15,8 +15,8 @@ import org.junit.runner.RunWith;
         },
         features = "src/test/resources",
         glue = "StepDefinition",
-        tags = "@Query01",
-        dryRun = false
+        tags = "@query02",//"@query01",
+        dryRun = true
 
 )
 
