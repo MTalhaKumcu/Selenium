@@ -3,10 +3,12 @@ package manage;
 public class QueryManage {
 
     private String query02 = "SELECT userlastname FROM java.users LIMIT 2 ;";
-    private String queryPhone ="UPDATE java.users SET userphonenumber = 122333444 WHERE username LIKE '%e';";
+    private String query03Phone = "UPDATE java.users SET userphonenumber = 122333444 WHERE username LIKE '%e';";
+    private String query04 = "UPDATE java.users SET userphonenumber = ? WHERE username LIKE '%e';";
 
-    public String getQueryPhone() {
-        return queryPhone;
+
+    public String getQuery03Phone() {
+        return query03Phone;
     }
 
     public String getQuery02() {

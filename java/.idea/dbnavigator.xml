@@ -23,16 +23,15 @@
       <console name="java" type="STANDARD" schema="" session="Main"><![CDATA[SELECT * FROM java.users WHERE userphonenumber;
 
 UPDATE java.users SET userphonenumber = 122333555 WHERE username LIKE '%e';
-SELECT * FROM java.users  WHERE username LIKE '%e';]]></console>
+SELECT * FROM java.users  WHERE username LIKE '%e';
+UPDATE java.users SET userphonenumber = ? WHERE username LIKE '%e';]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">
     <last-used-providers />
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files>
-      <object connection-id="074cd0c5-0dd5-46c5-8f5a-4c45f8c0f14c" object-ref="consoles/java" />
-    </open-files>
+    <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="20d3fb5e-2053-4c69-9a39-cd6b4ef1ca60" />

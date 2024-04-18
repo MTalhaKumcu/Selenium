@@ -86,7 +86,7 @@ public class StepDefinition {
     @Given("query03 update and execution")
     public void query03_update_and_execution() throws SQLException {
 
-        query = queryManage.getQueryPhone();
+        query = queryManage.getQuery03Phone();
         rowCount = JDBCResuableMethods.updateQuery(query);
     }
 
