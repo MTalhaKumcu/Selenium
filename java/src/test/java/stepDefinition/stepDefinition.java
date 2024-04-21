@@ -4,6 +4,7 @@ import io.cucumber.java.en.Given;
 import manage.QueryManage;
 import utilities.JDBCResuableMethods;
 
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -12,6 +13,8 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 
 public class stepDefinition {
+
+    PreparedStatement preparedStatement;
 
     ResultSet resultSet;
 
@@ -78,7 +81,7 @@ public class stepDefinition {
         }
 
 
-        //---------------------- update queary 01 ------------------
+        //---------------------- update queary 01 (normal statement) ------------------
 
 
     }
@@ -93,6 +96,33 @@ public class stepDefinition {
     @Given("query03 resultset process")
     public void query03_resultset_process() {
 
-        assertEquals(18,rowCount);
+        assertEquals(18, rowCount);
+    }
+
+    //---------------------- update queary 02 (prepared statement) ------------------
+
+    @Given("query04 update and execution")
+    public void query04_update_and_execution() throws SQLException {
+        query = queryManage.getQuery04();
+        preparedStatement = JDBCResuableMethods.getConnection().prepareStatement(query);
+        preparedStatement.setInt(1, 321123321);
+        preparedStatement.setString(2, "%e");
+
+        preparedStatement.executeUpdate();
+    }
+
+    @Given("query04 resultset process")
+    public void query04_resultset_process() {
+        assertEquals(0, rowCount);
+    }
+    //---------------------- insert queary 01 ------------------
+
+    @Given("insertQuery setup and execute")
+    public void insert_query_setup_and_execute() {
+
+    }
+    @Given("intsertQuery resultset verify")
+    public void intsert_query_resultset_verify() {
+
     }
 }

@@ -17,3 +17,9 @@ Feature: Update Query
     * query04 update and execution
     * query04 resultset process
     * db closed
+
+  @insertquery01
+  Scenario: users tablosunda yeni username,userlastname,email ekle
+    * insertQuery setup and execute
+    * intsertQuery resultset verify
+    * db closed
