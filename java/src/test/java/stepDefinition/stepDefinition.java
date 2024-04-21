@@ -118,11 +118,21 @@ public class stepDefinition {
     //---------------------- insert queary 01 ------------------
 
     @Given("insertQuery setup and execute")
-    public void insert_query_setup_and_execute() {
+    public void insert_query_setup_and_execute() throws SQLException {
+        query = queryManage.getInsertQuery01();
+        preparedStatement = JDBCResuableMethods.getConnection().prepareStatement(query);
+
+        preparedStatement.setString(1, "Talha");
+        preparedStatement.setString(2, "Talha");
+        preparedStatement.setString(3, "Talha@example.com");
+
+        rowCount = preparedStatement.executeUpdate();
+
 
     }
+
     @Given("intsertQuery resultset verify")
     public void intsert_query_resultset_verify() {
-
+        assertEquals(1,rowCount);
     }
 }

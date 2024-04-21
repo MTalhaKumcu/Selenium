@@ -18,7 +18,7 @@ import org.junit.runner.RunWith;
                 //" @update02",
                 //"update01",
         //"@query02",//"@query01",
-        dryRun = true
+        dryRun = false
 
 )
 

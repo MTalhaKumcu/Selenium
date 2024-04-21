@@ -17,9 +17,11 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="20d3fb5e-2053-4c69-9a39-cd6b4ef1ca60">
-      <console name="java_jdbc" type="STANDARD" schema="java" session="Main"><![CDATA[SELECT userlastname FROM java.users LIMIT 2 ;
-SELECT userphonenumber FROM java.users WHERE username LIKE '%e';
-SELECT * FROM java.users ;]]></console>
+      <console name="java_jdbc" type="STANDARD" schema="java" session="Main"><![CDATA[select userlastname from java.users limit 2 ;
+select userphonenumber from java.users where username like '%e';
+select * from java.users ;
+INSERT INTO java.users(username,userlastname,email ) 
+    VALUES (?,?,?);]]></console>
     </connection>
     <connection id="074cd0c5-0dd5-46c5-8f5a-4c45f8c0f14c">
       <console name="java" type="STANDARD" schema="" session="Main"><![CDATA[SELECT * FROM java.users WHERE userphonenumber;
