@@ -6,7 +6,6 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-
         plugin = {
                 "html:target/cucumber-reports.html",
                 "json:target/json-reports/cucumber.json",
@@ -14,10 +13,10 @@ import org.junit.runner.RunWith;
                 "rerun:target/failedRerun.txt"
         },
         features = "src/test/resources",
-        glue = "StepDefinition",
+        glue = "stepDefinition",
         tags = "update01",
         //"@query02",//"@query01",
-        dryRun = true
+        dryRun = false
 
 )
 
