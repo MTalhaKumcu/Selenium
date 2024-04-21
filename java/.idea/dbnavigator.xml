@@ -19,9 +19,9 @@
     <connection id="20d3fb5e-2053-4c69-9a39-cd6b4ef1ca60">
       <console name="java_jdbc" type="STANDARD" schema="java" session="Main"><![CDATA[select userlastname from java.users limit 2 ;
 select userphonenumber from java.users where username like '%e';
-select * from java.users ;
-INSERT INTO java.users(username,userlastname,email ) 
-    VALUES (?,?,?);]]></console>
+
+select username from java.users where email like 'Talha@example.com';
+select * from java.users ;]]></console>
     </connection>
     <connection id="074cd0c5-0dd5-46c5-8f5a-4c45f8c0f14c">
       <console name="java" type="STANDARD" schema="" session="Main"><![CDATA[SELECT * FROM java.users WHERE userphonenumber;
@@ -35,7 +35,9 @@ UPDATE java.users SET userphonenumber = ? WHERE username LIKE '%e';]]></console>
     <last-used-providers />
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files />
+    <open-files>
+      <object connection-id="20d3fb5e-2053-4c69-9a39-cd6b4ef1ca60" object-ref="consoles/java_jdbc" />
+    </open-files>
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="20d3fb5e-2053-4c69-9a39-cd6b4ef1ca60" />

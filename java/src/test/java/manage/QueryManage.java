@@ -5,10 +5,14 @@ public class QueryManage {
     private String query02 = "SELECT userlastname FROM java.users LIMIT 2 ;";
     private String query03Phone = "UPDATE java.users SET userphonenumber = 122333444 WHERE username LIKE '%e';";
 
-    private String insertQuery01 = "INSERT INTO java.users(username,userlastname,email ) VALUES (?,?,?);";
+    private String insertQuery01 = "INSERT INTO java.users(username,userlastname,email,age,salary,userphonenumber) VALUES (?,?,?,?,?,?);";
 
     public String getInsertQuery01() {
         return insertQuery01;
+    }
+
+    public void setInsertQuery01(String insertQuery01) {
+        this.insertQuery01 = insertQuery01;
     }
 
     public String getQuery04() {

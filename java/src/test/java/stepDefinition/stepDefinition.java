@@ -125,6 +125,9 @@ public class stepDefinition {
         preparedStatement.setString(1, "Talha");
         preparedStatement.setString(2, "Talha");
         preparedStatement.setString(3, "Talha@example.com");
+        preparedStatement.setInt(4,35);
+        preparedStatement.setInt(5,21111);
+        preparedStatement.setInt(6,100000000);
 
         rowCount = preparedStatement.executeUpdate();
 
@@ -133,6 +136,6 @@ public class stepDefinition {
 
     @Given("intsertQuery resultset verify")
     public void intsert_query_resultset_verify() {
-        assertEquals(1,rowCount);
+        assertEquals(1, rowCount);
     }
 }
