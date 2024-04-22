@@ -2,6 +2,7 @@ package stepDefinition;
 
 import io.cucumber.java.en.Given;
 import manage.QueryManage;
+import utilities.ConfigReader;
 import utilities.JDBCResuableMethods;
 
 import java.sql.PreparedStatement;
@@ -147,6 +148,7 @@ public class stepDefinition {
         preparedStatement = JDBCResuableMethods.getConnection().prepareStatement(query);
 
         int deletedID = 40;
+     //   String deletedID = ConfigReader.getProperty("DELETEDQUERY"); alttaki setInt`leri Stringe cevir
 
         preparedStatement.setInt(1, deletedID);
         rowCount = preparedStatement.executeUpdate();
