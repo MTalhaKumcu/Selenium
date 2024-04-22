@@ -10,7 +10,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 public class stepDefinition {
 
@@ -125,9 +125,9 @@ public class stepDefinition {
         preparedStatement.setString(1, "Talha");
         preparedStatement.setString(2, "Talha");
         preparedStatement.setString(3, "Talha@example.com");
-        preparedStatement.setInt(4,35);
-        preparedStatement.setInt(5,21111);
-        preparedStatement.setInt(6,100000000);
+        preparedStatement.setInt(4, 35);
+        preparedStatement.setInt(5, 21111);
+        preparedStatement.setInt(6, 100000000);
 
         rowCount = preparedStatement.executeUpdate();
 
@@ -137,5 +137,36 @@ public class stepDefinition {
     @Given("intsertQuery resultset verify")
     public void intsert_query_resultset_verify() {
         assertEquals(1, rowCount);
+    }
+
+
+    //-------------------- delete queary 01 ---------
+    @Given("delete query and execute")
+    public void delete_query_and_execute() throws SQLException {
+        query = queryManage.getDeleteQuery01();
+        preparedStatement = JDBCResuableMethods.getConnection().prepareStatement(query);
+
+        int deletedID = 40;
+
+        preparedStatement.setInt(1, deletedID);
+        rowCount = preparedStatement.executeUpdate();
+
+        System.out.println(rowCount);
+        assertEquals(1, rowCount);
+
+        String controlQuery = queryManage.getDeleteControlQuery();
+        preparedStatement = JDBCResuableMethods.getConnection().prepareStatement(controlQuery);
+
+        preparedStatement.setInt(1, deletedID);
+        resultSet = preparedStatement.executeQuery();
+
+        assertFalse(resultSet.next());
+
+
+    }
+
+    @Given("verify deleted data")
+    public void verify_deleted_data() {
+        // burada olmasi gereken kodlari yukaridaki methoda tasidik
     }
 }

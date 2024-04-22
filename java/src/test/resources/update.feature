@@ -23,3 +23,10 @@ Feature: Update Query
     * insertQuery setup and execute
     * intsertQuery resultset verify
     * db closed
+
+  @deletequery01
+  Scenario: users tablosunda user_id`ye gore bir datayi siliniz.
+
+    * delete query and execute
+    * verify deleted data
+    *  db closed

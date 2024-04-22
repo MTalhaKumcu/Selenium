@@ -7,6 +7,17 @@ public class QueryManage {
 
     private String insertQuery01 = "INSERT INTO java.users(username,userlastname,email,age,salary,userphonenumber) VALUES (?,?,?,?,?,?);";
 
+    private String deleteQuery01 = "DELETE FROM java.users WHERE user_id = ?;";
+    private String deleteControlQuery ="SELECT * FROM java.users WHERE user_id = ?;";
+
+    public String getDeleteControlQuery() {
+        return deleteControlQuery;
+    }
+
+    public String getDeleteQuery01() {
+        return deleteQuery01;
+    }
+
     public String getInsertQuery01() {
         return insertQuery01;
     }
@@ -30,4 +41,6 @@ public class QueryManage {
         return query02;
 
     }
+
+
 }

@@ -14,9 +14,10 @@ import org.junit.runner.RunWith;
         },
         features = "src/test/resources",
         glue = "stepDefinition",
-        tags = "@insertquery01",
-                //" @update02",
-                //"update01",
+        tags = "@deletequery01",
+        //    "@insertquery01",
+        //" @update02",
+        //"update01",
         //"@query02",//"@query01",
         dryRun = false
 
