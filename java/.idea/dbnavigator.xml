@@ -23,7 +23,7 @@ select userphonenumber from java.users where username like '%e';
 select username from java.users where email like 'Talha@example.com';
 select * from java.users ;
 
-DELETE FROM java.users WHERE user_id = 42;]]></console>
+DELETE FROM java.users WHERE user_id = 40;]]></console>
     </connection>
     <connection id="074cd0c5-0dd5-46c5-8f5a-4c45f8c0f14c">
       <console name="java" type="STANDARD" schema="" session="Main"><![CDATA[SELECT * FROM java.users WHERE userphonenumber;
