@@ -37,9 +37,7 @@ UPDATE java.users SET userphonenumber = ? WHERE username LIKE '%e';]]></console>
     <last-used-providers />
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files>
-      <object connection-id="20d3fb5e-2053-4c69-9a39-cd6b4ef1ca60" object-ref="consoles/java_jdbc" />
-    </open-files>
+    <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="20d3fb5e-2053-4c69-9a39-cd6b4ef1ca60" />

@@ -30,3 +30,10 @@ Feature: Update Query
     * delete query and execute
     * verify deleted data
     *  db closed
+
+  Scenario: users tablosunda user telefon`osunu siliniz ve bunu dogrulayiniz
+    #bu sorguyu yapabilmek icin once kendinize ait bir vdb olusturup onu silmeliyiz
+    * insert user into user db
+    * delete usertelefon from user table
+    * verify deleted last data
+    * db closed
