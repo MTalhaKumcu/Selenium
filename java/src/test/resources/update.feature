@@ -31,6 +31,7 @@ Feature: Update Query
     * verify deleted data
     *  db closed
 
+  @deletequery02
   Scenario: users tablosunda user telefon`osunu siliniz ve bunu dogrulayiniz
     #bu sorguyu yapabilmek icin once kendinize ait bir vdb olusturup onu silmeliyiz
     * insert user into user db

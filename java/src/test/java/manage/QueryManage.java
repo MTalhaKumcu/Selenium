@@ -8,7 +8,19 @@ public class QueryManage {
     private String insertQuery01 = "INSERT INTO java.users(username,userlastname,email,age,salary,userphonenumber) VALUES (?,?,?,?,?,?);";
 
     private String deleteQuery01 = "DELETE FROM java.users WHERE user_id = ?;";
-    private String deleteControlQuery ="SELECT * FROM java.users WHERE user_id = ?;";
+    private String deleteControlQuery = "SELECT * FROM java.users WHERE user_id = ?;";
+
+
+    private String insertQuery02 = "INSERT INTO java.users(username,userlastname,email) VALUES (?,?,?);";
+    private String deleteQuery02 = "DELETE FROM java.users WHERE user_id = ?";
+
+    public String getDeleteQuery02() {
+        return deleteQuery02;
+    }
+
+    public String getInsertQuery02() {
+        return insertQuery02;
+    }
 
     public String getDeleteControlQuery() {
         return deleteControlQuery;

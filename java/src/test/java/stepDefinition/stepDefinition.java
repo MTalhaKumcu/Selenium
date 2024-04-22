@@ -2,6 +2,7 @@ package stepDefinition;
 
 import io.cucumber.java.en.Given;
 import manage.QueryManage;
+import org.checkerframework.checker.units.qual.C;
 import utilities.ConfigReader;
 import utilities.JDBCResuableMethods;
 
@@ -131,8 +132,6 @@ public class stepDefinition {
         preparedStatement.setInt(6, 100000000);
 
         rowCount = preparedStatement.executeUpdate();
-
-
     }
 
     @Given("intsertQuery resultset verify")
@@ -141,14 +140,14 @@ public class stepDefinition {
     }
 
 
-    //-------------------- delete queary 01 ---------
+    //-------------------- delete query 01 ------------------
     @Given("delete query and execute")
     public void delete_query_and_execute() throws SQLException {
         query = queryManage.getDeleteQuery01();
         preparedStatement = JDBCResuableMethods.getConnection().prepareStatement(query);
 
         int deletedID = 40;
-     //   String deletedID = ConfigReader.getProperty("DELETEDQUERY"); alttaki setInt`leri Stringe cevir
+        //   String deletedID = ConfigReader.getProperty("DELETEDQUERY"); alttaki setInt`leri Stringe cevir
 
         preparedStatement.setInt(1, deletedID);
         rowCount = preparedStatement.executeUpdate();
@@ -170,5 +169,55 @@ public class stepDefinition {
     @Given("verify deleted data")
     public void verify_deleted_data() {
         // burada olmasi gereken kodlari yukaridaki methoda tasidik
+    }
+
+//---------------------- insert and delete query 02 ------------------
+
+    @Given("insert user into user db")
+    public void insert_user_into_user_db() throws SQLException {
+        query = queryManage.getInsertQuery02();
+        preparedStatement = JDBCResuableMethods.getConnection().prepareStatement(query);
+        // "INSERT INTO java.users(username,userlastname,email) VALUES (?,?,?);"
+        /*
+        *
+        * USERSNAME="ATILLA"
+          USERLASTNAME="ALP"
+          EMAIL="ATILLA@ALP.COM"
+          AGE="20"
+          SALARY="999999"
+          USERPHONENUMBER="555555555"
+        * */
+        preparedStatement.setString(1, ConfigReader.getProperty("USERSNAME"));
+        preparedStatement.setString(2, ConfigReader.getProperty("USERLASTNAME"));
+        preparedStatement.setString(3, ConfigReader.getProperty("EMAIL"));
+    /*   preparedStatement.setString(4, ConfigReader.getProperty("AGE"));
+        preparedStatement.setS(5, Integer.parseInt(ConfigReader.getProperty("SALARY")));
+        preparedStatement.setInt(6, Integer.parseInt(ConfigReader.getProperty("USERPHONENUMBER")));*/
+
+        rowCount = preparedStatement.executeUpdate();
+
+        System.out.println(rowCount);
+        assertEquals(1, rowCount);
+
+    }
+
+    @Given("delete usertelefon from user table")
+    public void delete_usertelefon_from_user_table() throws SQLException {
+
+        int lastRow = 48;
+
+        query = queryManage.getDeleteQuery02();
+        preparedStatement = JDBCResuableMethods.getConnection().prepareStatement(query);
+
+        preparedStatement.setInt(1, lastRow);
+        rowCount = preparedStatement.executeUpdate();
+
+        //ROW 48
+    }
+
+    @Given("verify deleted last data")
+    public void verify_deleted_last_data() {
+
+
     }
 }
