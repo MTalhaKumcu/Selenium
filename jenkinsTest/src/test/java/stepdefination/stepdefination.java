@@ -4,13 +4,15 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pages.instagram_Page;
+import utilities.ConfigReader;
+import utilities.Driver;
 
 public class stepdefination {
     instagram_Page instagramPage = new instagram_Page();
 
     @Given("go to {string} page")
     public void go_to_instagram_page() {
-
+        Driver.getDriver().get(ConfigReader.getProperties("instaUrl"));
     }
     @When("accept cookies")
     public void accept_cookies() {
