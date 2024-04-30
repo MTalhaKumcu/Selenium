@@ -8,6 +8,6 @@ Feature: Jenkins Test
     Then click singUp
     And fill user account info requirements
     And click account info next button
-    And fill "birthDay" requirements
+    And fill birthDay requirements
     And click birthday next button
     And Close page

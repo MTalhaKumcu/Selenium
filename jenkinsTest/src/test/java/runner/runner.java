@@ -15,7 +15,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "stepdefinations",
         tags = "@instagramLogin",
-        dryRun = true
+        dryRun = false
 
 )
 public class runner {

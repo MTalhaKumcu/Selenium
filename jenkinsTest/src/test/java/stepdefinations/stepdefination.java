@@ -24,7 +24,6 @@ public class stepdefination {
     @Given("go to instaUrl page")
     public void go_to_instaUrl_page() {
         Driver.getDriver().get(ConfigReader.getProperties("instaUrl"));
-
     }
 
     @When("accept cookies")
@@ -64,7 +63,7 @@ public class stepdefination {
 
     }
 
-    @Then("fill {string} requirements")
+    @Then("fill birthDay requirements")
     public void fill_requirements(String string) {
         actions = new Actions(Driver.getDriver());
 

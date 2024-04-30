@@ -15,7 +15,7 @@ public class instagram_Page {
     @FindBy(xpath = "//button[text()='Allow all cookies']")
     public WebElement allowCookies;
 
-    @FindBy(xpath = "//*[text()='Sign up'")
+    @FindBy(xpath = "//span[text()='Sign up']")
     public WebElement singUp;
 
     @FindBy(xpath = "(//*[@type='text'])[1]")
