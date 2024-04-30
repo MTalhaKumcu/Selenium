@@ -14,8 +14,8 @@ public class stepdefination {
 
     instagram_Page instagramPage = new instagram_Page();
     Actions actions;
-
     Faker faker = new Faker();
+
     String userEmail;
     String userFullName;
     String userAllias;
@@ -48,7 +48,7 @@ public class stepdefination {
         userFullName = faker.name().fullName();
         instagramPage.userFullName.sendKeys(userFullName);
 
-        userAllias = faker.funnyName().name();
+        userAllias = faker.name().username();
         instagramPage.userAllias.sendKeys(userAllias);
 
         password = faker.internet().password();

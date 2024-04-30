@@ -18,7 +18,7 @@ public class instagram_Page {
     @FindBy(xpath = "//span[text()='Sign up']")
     public WebElement singUp;
 
-    @FindBy(xpath = "(//*[@type='text'])[1]")
+    @FindBy(xpath = "(//input[@type='text'])[1]")
     public WebElement userEmail;
 
     @FindBy(xpath = "(//*[@type='text'])[2]")
