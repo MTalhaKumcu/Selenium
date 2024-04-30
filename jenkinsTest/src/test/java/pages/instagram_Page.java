@@ -30,5 +30,10 @@ public class instagram_Page {
     @FindBy(xpath = "//*[@type='password']")
     public WebElement userPassword;
 
+    @FindBy(xpath = "//*[text()='Next']")
+    public WebElement account_info_next_button;
+
+
+
 
 }

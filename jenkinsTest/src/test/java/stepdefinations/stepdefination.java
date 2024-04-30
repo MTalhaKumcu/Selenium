@@ -53,12 +53,12 @@ public class stepdefination {
         password = faker.internet().password();
         instagramPage.userPassword.sendKeys(password);
 
-
     }
 
     @Then("click account info next button")
     public void click_account_info_next_button() {
 
+        instagramPage.account_info_next_button.click();
 
     }
 
