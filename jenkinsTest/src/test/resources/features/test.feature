@@ -3,7 +3,7 @@ Feature: Jenkins Test
   @instagramLogin
   Scenario: create account in instagram
 
-    Given go to 'instaUrl' page
+    Given go to "instaUrl" page
     When accept cookies
     Then click singUp
     And fill 'user account info requirements
