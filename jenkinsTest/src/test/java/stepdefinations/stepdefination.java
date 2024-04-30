@@ -11,13 +11,15 @@ import utilities.ConfigReader;
 import utilities.Driver;
 
 public class stepdefination {
+
     instagram_Page instagramPage = new instagram_Page();
+    Actions actions;
+
     Faker faker = new Faker();
     String userEmail;
     String userFullName;
     String userAllias;
     String password;
-
 
     @Given("go to instaUrl page")
     public void go_to_instaUrl_page() {
@@ -64,16 +66,23 @@ public class stepdefination {
 
     @Then("fill {string} requirements")
     public void fill_requirements(String string) {
+        actions = new Actions(Driver.getDriver());
 
+        actions.click(instagramPage.birthday_Month)
+                .sendKeys(Keys.TAB)
+                .sendKeys("January").sendKeys(Keys.TAB)
+                .sendKeys("1").sendKeys(Keys.TAB)
+                .sendKeys("2000")
+                .perform();
     }
 
     @Then("click birthday next button")
     public void click_birthday_next_button() {
-
+        instagramPage.birthday_info_next_button.click();
     }
 
     @Then("Close page")
     public void close_page() {
-
+        Driver.closeDrive();
     }
 }

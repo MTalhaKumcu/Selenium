@@ -33,6 +33,13 @@ public class instagram_Page {
     @FindBy(xpath = "//*[text()='Next']")
     public WebElement account_info_next_button;
 
+    @FindBy(xpath = "//*[@title='Month:']")
+    public WebElement birthday_Month;
+
+    @FindBy(xpath = "//*[text()='Next']")
+    public WebElement birthday_info_next_button;
+
+
 
 
 
