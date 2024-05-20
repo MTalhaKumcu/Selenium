@@ -17,27 +17,28 @@ public class C08_JsonObjcallVariable {
 
         JSONArray phoneNumbers = new JSONArray();
 
-        phoneNumbers.put(0, cell)
-                .put(1, homeTel);
+        phoneNumbers.put(0, cell);
+        phoneNumbers.put(1, homeTel);
 
 
         JSONObject address = new JSONObject();
 
-        address.put("streetAddress ", "Yenimahalle kurtulus cad")
-                .put("city", "Ankara")
-                .put("postalCode", "06100");
+        address.put("streetAddress ", "Yenimahalle kurtulus cad");
+        address.put("city", "Ankara");
+        address.put("postalCode", "06100");
 
         JSONObject outerJSON = new JSONObject();
 
-        outerJSON.put("firstName", "smt")
-                .put("lastName", "another")
-                .put("age", 10)
-                .put("address", address)
-                .put("phoneNumbers", phoneNumbers);
+        outerJSON.put("firstName", "smt");
+        outerJSON.put("lastName", "another");
+        outerJSON.put("age", 10);
+        outerJSON.put("address", address);
+        outerJSON.put("phoneNumbers", phoneNumbers);
 
         System.out.println("person info: " + outerJSON);
-
-
+        System.out.println(outerJSON.get("firstName"));
+        // System.out.println("Address" + outerJSON.getJSONObject("address").getJSONObject("address"));
+        System.out.println("phone: " + outerJSON.getJSONArray("phoneNumbers").getJSONObject(0).get("number"));
     }
 
 }
