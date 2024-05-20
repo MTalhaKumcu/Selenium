@@ -24,7 +24,7 @@ public class C08_JsonObjcallVariable {
         JSONObject address = new JSONObject();
 
         address.put("streetAddress ", "Yenimahalle kurtulus cad");
-        address.put("city", "Ankara");
+        address.put("city", " Ankara");
         address.put("postalCode", "06100");
 
         JSONObject outerJSON = new JSONObject();
@@ -37,7 +37,7 @@ public class C08_JsonObjcallVariable {
 
         System.out.println("person info: " + outerJSON);
         System.out.println(outerJSON.get("firstName"));
-        // System.out.println("Address" + outerJSON.getJSONObject("address").getJSONObject("address"));
+        System.out.println("Address" + outerJSON.getJSONObject("address").get("city"));
         System.out.println("phone: " + outerJSON.getJSONArray("phoneNumbers").getJSONObject(0).get("number"));
     }
 
