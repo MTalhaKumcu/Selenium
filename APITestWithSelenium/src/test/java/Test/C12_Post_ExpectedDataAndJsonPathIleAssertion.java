@@ -53,6 +53,9 @@ public class C12_Post_ExpectedDataAndJsonPathIleAssertion {
 
         assertEquals(expecteDate.getJSONObject("booking").get("firstname"),
                      respJsonPath.get("booking.firstname"));
+        assertEquals(expecteDate.getJSONObject("booking").get("lastname"),
+                respJsonPath.get("booking.lastname"));
+
 
     }
 }
