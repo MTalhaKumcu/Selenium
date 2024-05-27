@@ -32,10 +32,10 @@ public class C11_Get_ExpectedData {
 
         JsonPath jsonPath = response.jsonPath();
 
-        Assert.assertEquals(expectedData.get("userId"),jsonPath.get("userId"));
 
         //4-Assertion
 
+        Assert.assertEquals(expectedData.get("userId"),jsonPath.get("userId"));
 
     }
 
