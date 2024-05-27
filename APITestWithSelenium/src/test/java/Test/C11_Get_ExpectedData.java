@@ -7,6 +7,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
+import static org.junit.Assert.assertEquals;
 
 public class C11_Get_ExpectedData {
 
@@ -35,8 +36,8 @@ public class C11_Get_ExpectedData {
 
         //4-Assertion
 
-        Assert.assertEquals(expectedData.get("userId"),jsonPath.get("userId"));
-
+        assertEquals(expectedData.get("userId"),jsonPath.get("userId"));
+        assertEquals(expectedData.get("id"),jsonPath.get("id"));
     }
 
 
