@@ -14,7 +14,6 @@ public class C07_GET_Rep {
 
         String url = "https://restful-booker.herokuapp.com/booking/10";
 
-
         Response response = given().when().get(url);
 
         response.prettyPrint();

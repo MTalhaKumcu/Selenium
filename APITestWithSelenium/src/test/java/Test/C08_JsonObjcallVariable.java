@@ -20,7 +20,6 @@ public class C08_JsonObjcallVariable {
         phoneNumbers.put(0, cell);
         phoneNumbers.put(1, homeTel);
 
-
         JSONObject address = new JSONObject();
 
         address.put("streetAddress ", "Yenimahalle kurtulus cad");
