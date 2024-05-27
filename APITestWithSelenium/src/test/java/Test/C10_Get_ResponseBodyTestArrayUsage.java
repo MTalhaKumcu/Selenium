@@ -1,13 +1,12 @@
 package Test;
 
-import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.hamcrest.Matchers;
 import org.junit.Test;
 
 import static io.restassured.RestAssured.given;
 
-public class C10_Get_REsponseBodyTestArrayUsage {
+public class C10_Get_ResponseBodyTestArrayUsage {
 
 
     @Test
@@ -29,7 +28,9 @@ public class C10_Get_REsponseBodyTestArrayUsage {
         response.then().assertThat()
                 .statusCode(200)
                 .contentType("application/json")
-                .body("data.id", Matchers.hasSize(24));
+                .body("data.id", Matchers.hasSize(24),
+                        "data.employee_name", Matchers.hasItem("Ashton Cox"),
+                        "data.employee_age", Matchers.hasItems(61, 30, 40));
 
 
     }
