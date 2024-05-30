@@ -1,12 +1,14 @@
 package Test;
 
+import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.json.JSONObject;
-import org.junit.Test;
+import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 import static io.restassured.RestAssured.given;
 
-public class C13__SoftAssertion {
+public class C13_SoftAssertion {
 
 
     @Test
@@ -14,6 +16,7 @@ public class C13__SoftAssertion {
 
         //1-url
         String url = "http://dummy.restapiexample.com/api/v1/employee/3";
+
         //2-expected data
         JSONObject reqInnerBody = new JSONObject();
 
@@ -37,6 +40,16 @@ public class C13__SoftAssertion {
 
         //4- assertion
 
+        SoftAssert softAssert = new SoftAssert();
+
+        JsonPath respJP = response.jsonPath();
+
+        softAssert.assertEquals(respJP.get("status"),expectedData.get("status"));
+        softAssert.assertEquals(respJP.get("message"),expectedData.get("message"));
+        softAssert.assertEquals(respJP.get("data.id"),expectedData.getJSONObject("data").get("id"));
+        softAssert.assertEquals(respJP.get("data.employee_name"),expectedData.getJSONObject("data").get("employee_name"));
+
+        softAssert.assertAll();
 
 
     }
