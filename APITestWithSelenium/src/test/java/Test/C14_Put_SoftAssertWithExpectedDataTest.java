@@ -5,6 +5,7 @@ import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.json.JSONObject;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 import static io.restassured.RestAssured.given;
 
@@ -47,7 +48,27 @@ public class C14_Put_SoftAssertWithExpectedDataTest {
         Response response = given().contentType(ContentType.JSON)
                 .when().body(reqBody.toString())
                 .put(url);
+        response.prettyPrint();
 
+
+        //4- assertion
+
+        SoftAssert softAssert = new SoftAssert();
+
+        JsonPath jsonPath = response.jsonPath();
+
+        softAssert.assertEquals(jsonPath.get("status"),expectedData.get("status"));
+        softAssert.assertEquals(jsonPath.get("message"), expectedData.get("message"));
+        softAssert.assertEquals(jsonPath.get("data.data.name"),
+                                expectedData.getJSONObject("data").getJSONObject("data").get("name"));
+
+        softAssert.assertEquals(jsonPath.get("data.data.id"),
+                                expectedData.getJSONObject("data").getJSONObject("data").get("id"));
+
+        softAssert.assertEquals(jsonPath.get("data.status"),
+                                expectedData.getJSONObject("data").get("status"));
+
+        softAssert.assertAll();
 
     }
 

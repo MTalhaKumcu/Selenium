@@ -15,7 +15,7 @@ public class C13_SoftAssertion {
     public void test01() {
 
         //1-url
-        String url = "http://dummy.restapiexample.com/api/v1/employee/3";
+        String url = "https://dummy.restapiexample.com/api/v1/employee/3";
 
         //2-expected data
         JSONObject reqInnerBody = new JSONObject();
