@@ -31,6 +31,7 @@ public class C18_Get_TestDataClassUsage extends JsonPlaceHolderBaseUrl {
         //4-assertion
 
         JsonPath resJP = response.jsonPath();
+        Assert.assertEquals(testDataJsonPlaceHolder.successCode,response.getStatusCode());
         Assert.assertEquals(expectedData.get("userId"), resJP.get("userId"));
         Assert.assertEquals(expectedData.get("id"), resJP.get("id"));
         Assert.assertEquals(expectedData.get("title"), resJP.get("title"));

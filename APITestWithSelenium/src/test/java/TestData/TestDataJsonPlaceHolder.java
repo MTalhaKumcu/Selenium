@@ -4,6 +4,9 @@ import org.json.JSONObject;
 
 public class TestDataJsonPlaceHolder {
 
+    public int successCode = 200;
+
+
     public JSONObject expectedData() {
         JSONObject expectedData = new JSONObject();
         expectedData.put("userId", 3)
