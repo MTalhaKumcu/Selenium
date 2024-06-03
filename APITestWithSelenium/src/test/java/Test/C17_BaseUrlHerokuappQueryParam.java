@@ -30,9 +30,18 @@ public class C17_BaseUrlHerokuappQueryParam extends HerokuAppBaseUrl {
     @Test
     public void get02() {
         //1-url
+        specHerokuApp.pathParam("pp1", "booking")
+                .queryParam("firstname", "eric");
         //2-expected
         //3-response
+        Response response = given().spec(specHerokuApp)
+                .when().get("/{pp1}");
+
+        response.prettyPrint();
+
         //4-assertion
+
+        response.then().assertThat().statusCode(200).body("bookingid", Matchers.hasSize(1));
     }
 
     @Test
