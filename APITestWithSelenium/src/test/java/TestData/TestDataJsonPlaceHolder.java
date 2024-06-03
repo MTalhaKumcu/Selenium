@@ -5,6 +5,8 @@ import org.json.JSONObject;
 public class TestDataJsonPlaceHolder {
 
     public int successCode = 200;
+    public String contentType = "application/json; charset=utf-8";
+    public String connecitonValue = "keep-alive";
 
 
     public JSONObject expectedData() {
@@ -14,5 +16,14 @@ public class TestDataJsonPlaceHolder {
                 .put("title", "dolor sint quo a velit explicabo quia nam")
                 .put("body", "eos qui et ipsum ipsam suscipit aut sed omnis non odio expedita ear um mollitia molestiae aut atque rem suscipit nam impedit esse");
         return expectedData;
+    }
+
+    public JSONObject createRequestBodyJson() {
+        JSONObject requestBody = new JSONObject();
+        requestBody.put("title", "Ahmet")
+                .put("body", "Merhaba")
+                .put("userId", 10)
+                .put("id", 70);
+        return requestBody;
     }
 }
