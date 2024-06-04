@@ -9,10 +9,10 @@ import lombok.NoArgsConstructor;
 @Data //create getter setter to string
 @NoArgsConstructor // create empty constructor
 @AllArgsConstructor //create another constructor
+
 public class BookingdatesPOJO {
 
-    private String checking;
-    private String checkout;
+    private String checking, checkout;
 
 
 }
