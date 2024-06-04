@@ -10,6 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import static io.restassured.RestAssured.given;
+import static org.junit.Assert.assertEquals;
 
 public class C23_Get_DeSerialization extends DummyBaseUrl {
 
@@ -36,8 +37,17 @@ public class C23_Get_DeSerialization extends DummyBaseUrl {
 
         //4- assertion
         HashMap<String, Object> respMap = response.as(HashMap.class);
-        Assert.assertEquals(((Map) (expData.get("data"))).get("id")
+
+        assertEquals(testDataDummy.contenTypr, response.contentType());
+        assertEquals(testDataDummy.successCode, response.getStatusCode());
+
+        assertEquals(expData.get("message"), respMap.get("message"));
+        assertEquals(expData.get("status"), respMap.get("status"));
+
+        assertEquals(((Map) (expData.get("data"))).get("id")
                 , ((Map) (respMap.get("data"))).get("id"));
+        assertEquals(((Map) (expData.get("data"))).get("employee_name"),
+                ((Map) (respMap.get("data"))).get("employee_name"));
 
     }
 
