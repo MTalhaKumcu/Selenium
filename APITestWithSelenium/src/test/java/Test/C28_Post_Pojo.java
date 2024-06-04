@@ -29,7 +29,7 @@ public class C28_Post_Pojo extends HerokuAppBaseUrl {
         //assertion
         HerokuAppExpDataPOJO respPojo = response.as(HerokuAppExpDataPOJO.class);
 
-        assertEquals(expDataPOJO.getBooking().getFirstname, respPojo.getBooking().getFirstname());
+        assertEquals(expDataPOJO.getBooking().getFirstname(), respPojo.getBooking().getFirstname());
     }
 
 }
