@@ -12,7 +12,7 @@ import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 
 
-public class C28_Post_Pojo extends HerokuAppBaseUrl {
+public class C26_Post_Pojo extends HerokuAppBaseUrl {
 
     @Test
     public void test01() {
